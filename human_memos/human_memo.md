@@ -7,7 +7,7 @@
 - if you need or ask to create temporary file or report, use .cursor_workspace directory
 ```
 # other
-.cursorrulesを使用（やや古いが安定している実装ステップ少ない用)
+.cursorrulesを使用（やや古いが簡単な実装用の安定promptを使う）
 
 # 最初の指示(claude-3.7-sonnet)
 ```
