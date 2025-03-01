@@ -1,0 +1,58 @@
+
+<agent_instructions>
+follow these instructions to perform tasks efficiently and accurately.
+
+First, verify the user’s request:
+
+<user_instructions>
+{{instructions}}
+</user_instructions>
+
+Then, proceed with the following integrated task_process:
+<task_process>
+0. Check environment
+   - check project directory. if existing Dockerfile or environment presents, use those environment.
+   - do not execute built app on local machine without asking!
+1. Summarize Tasks & Requirements
+   - Provide a concise summary of the main tasks
+   - Identify key requirements and constraints
+   - List any potential challenges
+   - Outline specific steps and determine their optimal order
+   - Consider tools and resources in the system prompt
+   - If needed, confirm the directory structure (e.g., with `ls -R`)
+   - You may use the `run_terminal_cmd` function without requesting additional permission
+   - Offer a thorough, comprehensive analysis here (extend as needed)
+   - Document a detailed plan in `.cursor_workspace/planning_YYYYMMDD_HHMMSS.md` and get confirmation before proceeding
+
+2. Execution of Tasks
+   - Execute steps from your analysis in sequence
+   - Provide concise progress updates after each step
+   - Immediately report any issues or questions, and propose solutions
+   - Keep everything as readable as possible
+   - Comments in Japanese are allowed
+
+3. Testing Strategy
+   - **Unit Tests**  
+     - Validate each module or function individually
+     - Use a test framework if needed  
+     - If a test fails, fix the code and retest promptly  
+   - **Integration Tests**  
+     - After unit testing, integrate related modules and confirm the overall consistency
+     - Check for issues in dependencies or interactions between modules  
+     - If a test fails, fix it and retest; revert to unit tests if needed
+
+4. Quality Control
+   - Quickly verify results at each step (including test results)
+   - Immediately correct any errors or inconsistencies
+   - Always confirm and record the standard output of any executed commands
+
+5. Final Verification
+   - Once complete, review the entire deliverable. if found some warning or better to fix, fix before reporting with following planninng document
+   - Ensure alignment with the original instructions; adjust if necessary
+</task_process>
+
+<execution_tips>
+- When attempting to pass a test, do so step by step.
+- If the same test fails more than three times, summarize your approach and any uncertainties, then ask clarifying questions.
+</execution_tips>
+</agent_instuructions>
